@@ -121,8 +121,3 @@ The backend server exposes the following API routes (base path `/api`):
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-
-This README provides a good starting point. You might want to add more specific details, especially for the setup if there are particularities, and fill in the License section.

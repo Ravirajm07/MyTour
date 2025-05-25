@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TOURISM - Explore the World</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Comforter+Brush&family=Heebo:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    .logo {
+      font-family: 'Abril Fatface', cursive;
+      font-size: 2.5rem;
+      margin-left: -15px;
+      letter-spacing: 1px;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+    }
+
+    .navbar-list {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      margin-right: 2.5rem;
+    }
+
+    .navbar-link {
+      font-family: 'Heebo', sans-serif;
+      font-weight: 600;
+      font-size: 1.2rem;
+      letter-spacing: 0.3px;
+      padding: 0.8rem 0;
+      position: relative;
+      transition: all 0.3s ease;
+      text-transform: capitalize;
+    }
+
+    .navbar-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background-color: currentColor;
+      transition: width 0.3s ease;
+    }
+
+    .navbar-link:hover::after {
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      .navbar-list {
+        gap: 1.5rem;
+        margin-right: 1.5rem;
+      }
+      
+      .navbar-link {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="#">
+        <h1 class="logo">MYTOUR</h1>
+      </a>
+
+      <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle Menu">
+        <ion-icon name="menu-outline" class="open"></ion-icon>
+        <ion-icon name="close-outline" class="close"></ion-icon>
+      </button>
+
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+
+          <li>
+            <a href="#" class="navbar-link">Home</a>
+          </li>
+
+          <li>
+            <a href="#about-us" class="navbar-link">About Us</a>
+          </li>
+
+          <li>
+            <a href="#featured-tours" class="navbar-link">Tours</a>
+          </li>
+
+          <li>
+            <a href="#blog-posts" class="navbar-link">Blog</a>
+          </li>
+
+          <li>
+            <a href="contact.html" class="navbar-link">Contact Us</a>
+          </li>
+
+          <li>
+            <a href="#choose-place" class="btn btn-secondary" data-modal-target="#loginModal">Login</a>
+          </li>
+
+        </ul>
+
+        <a href="#destinations" class="btn btn-secondary">Booking Now</a>
+
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- Notification System -->
+  <div class="notification" id="notification">
+    <div class="notification-content">
+      <ion-icon name="checkmark-circle-outline" class="notification-icon"></ion-icon>
+      <p class="notification-message"></p>
+    </div>
+  </div>
+
+  <!-- Login Modal -->
+  <div class="modal" id="loginModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Login</h2>
+        <button class="close-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form class="login-form">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required placeholder="Enter your password">
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Login</button>
+          </div>
+          <div class="form-footer">
+            <p>Don't have an account? <a href="#" class="signup-link" data-modal-target="#signupModal">Sign up</a></p>
+            <a href="#" class="forgot-password" data-modal-target="#forgotPasswordModal">Forgot Password?</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay"></div>
+
+  <!-- Sign Up Modal -->
+  <div class="modal" id="signupModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Sign Up</h2>
+        <button class="close-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form class="signup-form">
+          <div class="form-group">
+            <label for="signup-name">Full Name</label>
+            <input type="text" id="signup-name" name="name" required placeholder="Enter your full name">
+          </div>
+          <div class="form-group">
+            <label for="signup-email">Email</label>
+            <input type="email" id="signup-email" name="email" required placeholder="Enter your email">
+          </div>
+          <div class="form-group">
+            <label for="signup-password">Password</label>
+            <input type="password" id="signup-password" name="password" required placeholder="Create a password">
+          </div>
+          <div class="form-group">
+            <label for="signup-confirm-password">Confirm Password</label>
+            <input type="password" id="signup-confirm-password" name="confirm-password" required placeholder="Confirm your password">
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+          </div>
+          <div class="form-footer">
+            <p>Already have an account? <a href="#" class="login-link" data-modal-target="#loginModal">Login</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Forgot Password Modal -->
+  <div class="modal" id="forgotPasswordModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Reset Password</h2>
+        <button class="close-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form class="forgot-password-form">
+          <div class="form-group">
+            <label for="reset-email">Email</label>
+            <input type="email" id="reset-email" name="email" required placeholder="Enter your email">
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Send Reset Link</button>
+          </div>
+          <div class="form-footer">
+            <p>Remember your password? <a href="#" class="login-link" data-modal-target="#loginModal">Login</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="section hero"
+        style="background-image: url('./assets/images/hero-bg-bottom.png') url('./assets/images/hero-bg-top.png')">
+        <div class="container">
+
+          <img src="./assets/images/shape-1.png" width="61" height="61" alt="Vector Shape" class="shape shape-1">
+
+          <img src="./assets/images/shape-2.png" width="56" height="74" alt="Vector Shape" class="shape shape-2">
+
+          <img src="./assets/images/shape-3.png" width="57" height="72" alt="Vector Shape" class="shape shape-3">
+
+          <div class="hero-content">
+
+            <p class="section-subtitle">Explore Your Travel</p>
+
+            <h2 class="hero-title">Trusted Travel Agency</h2>
+
+            <p class="hero-text">
+              I travel not to go anywhere, but to go. I travel for travel's sake the great affair is to move.
+            </p>
+
+            <div class="btn-group">
+              <a href="contact.html" class="btn btn-primary">Contact Us</a>
+
+              <a href="#" class="btn btn-outline">Learn More</a>
+            </div>
+
+          </div>
+
+          <figure class="hero-banner">
+            <img src="./assets/images/hero-banner.png" width="686" height="812" loading="lazy" alt="hero banner"
+              class="w-100">
+          </figure>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #DESTINATION
+      -->
+      <section class="section destination" id="destinations">
+        <div class="container">
+
+          <p class="section-subtitle">Destinations</p>
+
+          <h2 class="h2 section-title">Choose Your Place</h2>
+
+          <ul class="destination-list">
+
+            <li class="w-50">
+              <a href="maldives.html" class="destination-card">
+
+                <figure class="card-banner">
+                  <img src="./assets/images/destination-1.jpg" width="1140" height="1100" loading="lazy"
+                    alt="Malé, Maldives" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+                  <p class="card-subtitle">Malé</p>
+
+                  <h3 class="h3 card-title">Maldives</h3>
+                </div>
+
+              </a>
+            </li>
+
+            <li class="w-50">
+              <a href="thailand.html" class="destination-card">
+
+                <figure class="card-banner">
+                  <img src="./assets/images/destination-2.jpg" width="1140" height="1100" loading="lazy"
+                    alt="Bangkok, Thailand" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+                  <p class="card-subtitle">Bangkok</p>
+
+                  <h3 class="h3 card-title">Thailand</h3>
+                </div>
+
+              </a>
+            </li>
+
+            <li>
+              <a href="malaysia.html" class="destination-card">
+
+                <figure class="card-banner">
+                  <img src="./assets/images/destination-3.jpg" width="1110" height="480" loading="lazy"
+                    alt="Kuala Lumpur, Malaysia" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+                  <p class="card-subtitle">Kuala Lumpur</p>
+
+                  <h3 class="h3 card-title">Malaysia</h3>
+                </div>
+
+              </a>
+            </li>
+
+            <li>
+              <a href="nepal.html" class="destination-card">
+
+                <figure class="card-banner">
+                  <img src="./assets/images/destination-4.jpg" width="1110" height="480" loading="lazy"
+                    alt="Kathmandu, Nepal" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+                  <p class="card-subtitle">Kathmandu</p>
+
+                  <h3 class="h3 card-title">Nepal</h3>
+                </div>
+
+              </a>
+            </li>
+
+            <li>
+              <a href="indonesia.html" class="destination-card">
+
+                <figure class="card-banner">
+                  <img src="./assets/images/destination-5.jpg" width="1110" height="480" loading="lazy"
+                    alt="Jakarta, Indonesia" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+                  <p class="card-subtitle">Jakarta</p>
+
+                  <h3 class="h3 card-title">Indonesia</h3>
+                </div>
+
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+      <!-- 
+        - #POPULAR
+      -->
+
+      <section class="section popular" id="featured-tours">
+        <div class="container">
+
+          <p class="section-subtitle">Featured Tours</p>
+
+          <h2 class="h2 section-title">Most Popular Tours</h2>
+
+          <ul class="popular-list">
+
+            <li>
+              <div class="popular-card">
+
+                <figure class="card-banner">
+                  <a href="bali.html">
+                    <img src="./assets/images/Bali.jpg" width="740" height="518" loading="lazy"
+                      alt="Bali, Indonesia" class="img-cover">
+                  </a>
+
+                  <span class="card-badge">
+                    <ion-icon name="time-outline"></ion-icon>
+
+                    <time datetime="P7D">7 Days</time>
+                  </span>
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-wrapper">
+                    <div class="card-price">From ₹74,999</div>
+
+                    <div class="card-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+
+                      <data value="4.9">(4.9)</data>
+                    </div>
+                  </div>
+
+                  <h3 class="card-title">
+                    <a href="bali.html">Bali Paradise: Temples, Beaches & Culture</a>
+                  </h3>
+
+                  <address class="card-location">Bali, Indonesia</address>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="popular-card">
+
+                <figure class="card-banner">
+                  <a href="greek-islands.html">
+                    <img src="./assets/images/Greek.png" width="740" height="518" loading="lazy"
+                      alt="Santorini, Greece" class="img-cover">
+                  </a>
+
+                  <span class="card-badge">
+                    <ion-icon name="time-outline"></ion-icon>
+
+                    <time datetime="P5D">5 Days</time>
+                  </span>
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-wrapper">
+                    <div class="card-price">From ₹1,08,999</div>
+
+                    <div class="card-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star-half"></ion-icon>
+
+                      <data value="4.7">(4.7)</data>
+                    </div>
+                  </div>
+
+                  <h3 class="card-title">
+                    <a href="greek-islands.html">Greek Islands: Santorini Sunset Experience</a>
+                  </h3>
+
+                  <address class="card-location">Santorini, Greece</address>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="popular-card">
+
+                <figure class="card-banner">
+                  <a href="japanese-heritage.html">
+                    <img src="./assets/images/Tokiyo.png" width="740" height="518" loading="lazy"
+                      alt="Kyoto, Japan" class="img-cover">
+                  </a>
+
+                  <span class="card-badge">
+                    <ion-icon name="time-outline"></ion-icon>
+
+                    <time datetime="P6D">6 Days</time>
+                  </span>
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-wrapper">
+                    <div class="card-price">From ₹1,24,999</div>
+
+                    <div class="card-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+
+                      <data value="4.8">(4.8)</data>
+                    </div>
+                  </div>
+
+                  <h3 class="card-title">
+                    <a href="japanese-heritage.html">Japanese Heritage: Kyoto & Tokyo Explorer</a>
+                  </h3>
+
+                  <address class="card-location">Kyoto, Japan</address>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #ABOUT
+      -->
+
+      <section class="section about" id="about-us">
+        <div class="container">
+
+          <div class="about-content">
+
+            <p class="section-subtitle">About Us</p>
+
+            <h2 class="h2 section-title">Your Journey, Our Passion</h2>
+
+            <p class="about-text">
+              At MYTOUR, we believe that travel is not just about destinations—it's about creating unforgettable experiences. With over a decade of expertise in crafting perfect journeys, we're dedicated to making your travel dreams come true.
+            </p>
+
+            <ul class="about-list">
+
+              <li class="about-item">
+
+                <div class="about-item-icon">
+                  <ion-icon name="compass"></ion-icon>
+                </div>
+
+                <div class="about-item-content">
+                  <h3 class="h3 about-item-title">Expert Tour Guides</h3>
+
+                  <p class="about-item-text">
+                    Our certified guides bring destinations to life with their local knowledge and passion for storytelling.
+                  </p>
+                </div>
+
+              </li>
+
+              <li class="about-item">
+
+                <div class="about-item-icon">
+                  <ion-icon name="briefcase"></ion-icon>
+                </div>
+
+                <div class="about-item-content">
+                  <h3 class="h3 about-item-title">Best Value Guarantee</h3>
+
+                  <p class="about-item-text">
+                    We offer competitive prices and flexible packages to suit every budget without compromising on quality.
+                  </p>
+                </div>
+
+              </li>
+
+              <li class="about-item">
+
+                <div class="about-item-icon">
+                  <ion-icon name="umbrella"></ion-icon>
+                </div>
+
+                <div class="about-item-content">
+                  <h3 class="h3 about-item-title">24/7 Support</h3>
+
+                  <p class="about-item-text">
+                    Our dedicated team is available round the clock to ensure your journey is smooth and worry-free.
+                  </p>
+                </div>
+
+              </li>
+
+              <li class="about-item">
+
+                <div class="about-item-icon">
+                  <ion-icon name="heart"></ion-icon>
+                </div>
+
+                <div class="about-item-content">
+                  <h3 class="h3 about-item-title">Sustainable Tourism</h3>
+
+                  <p class="about-item-text">
+                    We're committed to responsible travel practices that benefit local communities and preserve natural wonders.
+                  </p>
+                </div>
+
+              </li>
+
+            </ul>
+
+            <div class="about-stats">
+              <div class="stat-item">
+                <span class="stat-number">10K+</span>
+                <span class="stat-text">Happy Travelers</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">50+</span>
+                <span class="stat-text">Destinations</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">15+</span>
+                <span class="stat-text">Years Experience</span>
+              </div>
+            </div>
+
+            <a href="#destinations" class="btn btn-primary">Start Your Journey</a>
+
+          </div>
+
+          <figure class="about-banner">
+            <img src="./assets/images/about-banner.png" width="756" height="842" loading="lazy" alt="Travel Experience" class="w-100">
+          </figure>
+
+        </div>
+      </section>
+
+      <style>
+        .about-stats {
+          display: flex;
+          gap: 2rem;
+          margin: 2rem 0;
+          padding: 1.5rem;
+          background: #f8f9fa;
+          border-radius: 10px;
+        }
+
+        .stat-item {
+          text-align: center;
+          flex: 1;
+        }
+
+        .stat-number {
+          display: block;
+          font-size: 2.5rem;
+          font-weight: 700;
+          color: #2c3e50;
+          margin-bottom: 0.5rem;
+        }
+
+        .stat-text {
+          color: #666;
+          font-size: 1.1rem;
+        }
+
+        .about-item {
+          transition: transform 0.3s ease;
+        }
+
+        .about-item:hover {
+          transform: translateY(-5px);
+        }
+
+        .about-item-icon {
+          background: #e8f4f8;
+          padding: 1rem;
+          border-radius: 50%;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 1rem;
+        }
+
+        .about-item-icon ion-icon {
+          font-size: 2rem;
+          color: #2c3e50;
+        }
+
+        .about-text {
+          font-size: 1.1rem;
+          line-height: 1.8;
+          color: #666;
+          margin-bottom: 2rem;
+        }
+
+        .section-title {
+          font-size: 2.5rem;
+          margin-bottom: 1.5rem;
+          color: #2c3e50;
+        }
+      </style>
+
+
+
+
+
+      <!-- 
+        - #BLOG
+      -->
+
+      <section class="section blog" id="blog-posts">
+        <div class="container">
+
+          <p class="section-subtitle">From The Blog Post</p>
+
+          <h2 class="h2 section-title">Latest News & Articles</h2>
+
+          <ul class="blog-list">
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner">
+
+                  <a href="hidden-gems.html">
+                    <img src="./assets/images/HiddenGems.jpg" width="740" height="518" loading="lazy"
+                      alt="Top 10 Hidden Gems in Southeast Asia" class="img-cover">
+                  </a>
+
+                  <span class="card-badge">
+                    <ion-icon name="time-outline"></ion-icon>
+
+                    <time datetime="2024-03">15 Mar</time>
+                  </span>
+
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-wrapper">
+
+                    <div class="author-wrapper">
+                      <figure class="author-avatar">
+                        <img src="./assets/images/no-dp_16.jpg" width="30" height="30" alt="Sarah Johnson">
+                      </figure>
+
+                      <div>
+                        <a href="hidden-gems.html" class="author-name">Sujal Kamble</a>
+
+                        <p class="author-title">Travel Expert</p>
+                      </div>
+                    </div>
+
+                    <time class="publish-time" datetime="14:30">2:30 PM</time>
+
+                  </div>
+
+                  <h3 class="card-title">
+                    <a href="hidden-gems.html">
+                      Top 10 Hidden Gems in Southeast Asia You Must Visit
+                    </a>
+                  </h3>
+
+                  <a href="hidden-gems.html" class="btn-link">
+                    <span>Read More</span>
+
+                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                  </a>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner">
+
+                  <a href="budget-travel.html">
+                    <img src="./assets/images/Buget.jpg" width="740" height="518" loading="lazy"
+                      alt="Budget Travel Tips for Europe" class="img-cover">
+                  </a>
+
+                  <span class="card-badge">
+                    <ion-icon name="time-outline"></ion-icon>
+
+                    <time datetime="2024-03">12 Mar</time>
+                  </span>
+
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-wrapper">
+
+                    <div class="author-wrapper">
+                      <figure class="author-avatar">
+                        <img src="./assets/images/no-dp_16.jpg" width="30" height="30" alt="Michael Chen">
+                      </figure>
+
+                      <div>
+                        <a href="budget-travel.html" class="author-name">Shubhada Tarlekar</a>
+
+                        <p class="author-title">Budget Travel Specialist</p>
+                      </div>
+                    </div>
+
+                    <time class="publish-time" datetime="11:15">11:15 AM</time>
+
+                  </div>
+
+                  <h3 class="card-title">
+                    <a href="budget-travel.html">
+                      Smart Budget Travel: How to Explore Europe Without Breaking the Bank
+                    </a>
+                  </h3>
+
+                  <a href="budget-travel.html" class="btn-link">
+                    <span>Read More</span>
+
+                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                  </a>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner">
+
+                  <a href="sustainable-travel.html">
+                    <img src="./assets/images/sustainable-adventure-travel.jpg" width="740" height="518" loading="lazy"
+                      alt="Sustainable Travel Guide" class="img-cover">
+                  </a>
+
+                  <span class="card-badge">
+                    <ion-icon name="time-outline"></ion-icon>
+
+                    <time datetime="2024-03">10 Mar</time>
+                  </span>
+
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-wrapper">
+
+                    <div class="author-wrapper">
+                      <figure class="author-avatar">
+                        <img src="./assets/images/no-dp_16.jpg" width="30" height="30" alt="Emma Wilson">
+                      </figure>
+
+                      <div>
+                        <a href="sustainable-travel.html" class="author-name">Sanafatima Bhatare</a>
+
+                        <p class="author-title">Eco-Travel Writer</p>
+                      </div>
+                    </div>
+
+                    <time class="publish-time" datetime="09:45">9:45 AM</time>
+
+                  </div>
+
+                  <h3 class="card-title">
+                    <a href="sustainable-travel.html">
+                      Sustainable Travel: A Complete Guide to Eco-Friendly Adventures
+                    </a>
+                  </h3>
+
+                  <a href="sustainable-travel.html" class="btn-link">
+                    <span>Read More</span>
+
+                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                  </a>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer" style="background-image: url('./assets/images/footer-bg.png')">
+    <div class="container">
+
+      <div class="footer-top">
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Top destination</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Manali, Himachal</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Maldives, Male</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Australia, Canberra</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Thailand, Bangkok</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Morocco, Rabat</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Categories</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Travel</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Lifestyle</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Fashion</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Education</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Food & Drink</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Quick links</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">About</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Contact</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Tours</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Booking</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Terms & Conditions</a>
+          </li>
+
+        </ul>
+
+        <div class="footer-list">
+
+          <p class="footer-list-title">Get a newsletter</p>
+
+          <p class="newsletter-text">
+            For the latest deals and tips, travel no further than your inbox
+          </p>
+
+          <form action="" class="newsletter-form">
+            <input type="email" name="email" required placeholder="Email address" class="newsletter-input">
+
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </form>
+
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+
+        <a href="#" class="logo">MyTour</a>
+
+        <p class="copyright">
+          &copy; 2024 <a href="#" class="copyright-link">MoreRaviraj</a>. All Rights Reserved
+        </p>
+
+        <ul class="social-list">
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-google"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+  </footer>
+
+
+
+
+
+  <!-- 
+    - #GO TO TOP
+  -->
+
+  <a href="#top" class="go-top" data-go-top aria-label="Go To Top">
+    <ion-icon name="chevron-up-outline"></ion-icon>
+  </a>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- Add this somewhere in your HTML after signup, or as a notification -->
+  <script>
+    const verifyBtn = document.createElement('button');
+    verifyBtn.textContent = 'Verify Now';
+    verifyBtn.onclick = function() {
+      fetch(`http://localhost:5000/verify/${window.verifyUserId}`)
+        .then(res => res.json())
+        .then(data => showNotification(data.message));
+    };
+    document.body.appendChild(verifyBtn);
+  </script>
+
+  <script>
+    document.querySelector('.login-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      fetch('http://localhost:5000/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: document.getElementById('email').value,
+          password: document.getElementById('password').value
+        })
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.user) {
+          showNotification('Login successful!');
+          // Redirect to account page, etc.
+        } else {
+          showNotification(data.error || 'Login failed');
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>

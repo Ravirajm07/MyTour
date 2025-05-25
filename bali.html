@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bali Paradise: Temples, Beaches & Culture - MyTour</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Comforter+Brush&family=Heebo:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .package-header {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./assets/images/Bali.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .package-details {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .package-info {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .package-description {
+            line-height: 1.8;
+        }
+
+        .package-sidebar {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .booking-form {
+            margin-top: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .price-summary {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #ddd;
+        }
+
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .total-price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 2px solid #ddd;
+        }
+
+        .payment-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .payment-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+        }
+
+        .success-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .success-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        .itinerary-day {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+
+        .itinerary-day h4 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header" data-header>
+        <div class="container">
+            <a href="index.html">
+                <h1 class="logo">MYTOUR</h1>
+            </a>
+            <nav class="navbar">
+                <ul class="navbar-list">
+                    <li><a href="index.html" class="navbar-link">Home</a></li>
+                    <li><a href="index.html#about-us" class="navbar-link">About Us</a></li>
+                    <li><a href="index.html#featured-tours" class="navbar-link">Tours</a></li>
+                    <li><a href="index.html#blog-posts" class="navbar-link">Blog</a></li>
+                    <li><a href="contact.html" class="navbar-link">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="package-header">
+        <div class="container">
+            <h1>Bali Paradise: Temples, Beaches & Culture</h1>
+            <p>7 Days of Indonesian Paradise</p>
+        </div>
+    </div>
+
+    <main class="package-details">
+        <div class="container">
+            <div class="package-info">
+                <div class="package-description">
+                    <h2>Package Overview</h2>
+                    <p>Experience the perfect blend of spiritual tranquility and tropical paradise in Bali. This 7-day journey takes you through ancient temples, pristine beaches, and vibrant cultural experiences.</p>
+
+                    <h3>Highlights</h3>
+                    <ul>
+                        <li>Visit the sacred Uluwatu Temple at sunset</li>
+                        <li>Explore the cultural heart of Ubud</li>
+                        <li>Relax on the white sands of Nusa Dua Beach</li>
+                        <li>Experience traditional Balinese dance</li>
+                        <li>Visit the Tegallalang Rice Terraces</li>
+                        <li>Enjoy a traditional cooking class</li>
+                    </ul>
+
+                    <h3>Detailed Itinerary</h3>
+                    <div class="itinerary-day">
+                        <h4>Day 1: Arrival in Bali</h4>
+                        <p>Welcome to Bali! Transfer to your hotel in Seminyak. Evening at leisure to explore the local area.</p>
+                    </div>
+                    <div class="itinerary-day">
+                        <h4>Day 2: Ubud Cultural Tour</h4>
+                        <p>Visit the Sacred Monkey Forest, Ubud Palace, and local art markets. Evening traditional dance performance.</p>
+                    </div>
+                    <div class="itinerary-day">
+                        <h4>Day 3: Temple & Beach Day</h4>
+                        <p>Morning visit to Uluwatu Temple, followed by beach time at Nusa Dua.</p>
+                    </div>
+                    <div class="itinerary-day">
+                        <h4>Day 4: Rice Terraces & Cooking Class</h4>
+                        <p>Visit Tegallalang Rice Terraces and participate in a traditional Balinese cooking class.</p>
+                    </div>
+                    <div class="itinerary-day">
+                        <h4>Day 5: Water Temple & Hot Springs</h4>
+                        <p>Visit Tirta Empul Temple and enjoy the natural hot springs.</p>
+                    </div>
+                    <div class="itinerary-day">
+                        <h4>Day 6: Free Day & Spa</h4>
+                        <p>Day at leisure with optional spa treatments and shopping.</p>
+                    </div>
+                    <div class="itinerary-day">
+                        <h4>Day 7: Departure</h4>
+                        <p>Transfer to airport for your departure flight.</p>
+                    </div>
+                </div>
+
+                <div class="package-sidebar">
+                    <div class="package-summary">
+                        <h3>Package Details</h3>
+                        <p><strong>Duration:</strong> 7 Days</p>
+                        <p><strong>Price:</strong> From ₹74,999 per person</p>
+                        <p><strong>Rating:</strong> ⭐⭐⭐⭐⭐ (4.9)</p>
+                    </div>
+
+                    <div class="booking-form">
+                        <h3>Book This Package</h3>
+                        <form id="bookingForm">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="date">Preferred Travel Date</label>
+                                <input type="date" id="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="guests">Number of Guests</label>
+                                <select id="guests" required>
+                                    <option value="1">1 Guest</option>
+                                    <option value="2">2 Guests</option>
+                                    <option value="3">3 Guests</option>
+                                    <option value="4">4 Guests</option>
+                                </select>
+                            </div>
+
+                            <div class="price-summary">
+                                <div class="price-item">
+                                    <span>Package Price</span>
+                                    <span>₹74,999</span>
+                                </div>
+                                <div class="price-item">
+                                    <span>Taxes & Fees</span>
+                                    <span>₹3,750</span>
+                                </div>
+                                <div class="total-price">
+                                    <span>Total</span>
+                                    <span>₹78,749</span>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Proceed to Payment</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Payment Modal -->
+    <div class="payment-modal" id="paymentModal">
+        <div class="payment-content">
+            <h2>Payment Details</h2>
+            <form id="paymentForm">
+                <div class="form-group">
+                    <label for="cardName">Cardholder Name</label>
+                    <input type="text" id="cardName" required>
+                </div>
+                <div class="form-group">
+                    <label for="cardNumber">Card Number</label>
+                    <input type="text" id="cardNumber" required>
+                </div>
+                <div class="form-group">
+                    <label for="expiry">Expiry Date</label>
+                    <input type="text" id="expiry" placeholder="MM/YY" required>
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Pay ₹78,749</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="success-modal" id="successModal">
+        <div class="success-content">
+            <h2>Booking Confirmed! 🎉</h2>
+            <p>Thank you for booking with MyTour!</p>
+            <p>Your booking details have been sent to your email.</p>
+            <button class="btn btn-primary" onclick="closeSuccessModal()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('paymentModal').style.display = 'flex';
+        });
+
+        document.getElementById('paymentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('paymentModal').style.display = 'none';
+            document.getElementById('successModal').style.display = 'flex';
+        });
+
+        function closeSuccessModal() {
+            document.getElementById('successModal').style.display = 'none';
+            window.location.href = 'index.html';
+        }
+    </script>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <a href="#" class="logo">MyTour</a>
+                <p class="copyright">
+                    &copy; 2024 <a href="#" class="copyright-link">MyTour</a>. All Rights Reserved
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Account - TOURISM</title>
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- custom css link -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- google font link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Comforter+Brush&family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body id="top">
+
+  <!-- HEADER -->
+  <header class="header" data-header>
+    <div class="container">
+      <a href="index.html">
+        <h1 class="logo">MYTOUR</h1>
+      </a>
+
+      <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle Menu">
+        <ion-icon name="menu-outline" class="open"></ion-icon>
+        <ion-icon name="close-outline" class="close"></ion-icon>
+      </button>
+
+      <nav class="navbar">
+        <ul class="navbar-list">
+          <li>
+            <a href="index.html" class="navbar-link">Home</a>
+          </li>
+          <li>
+            <a href="#" class="navbar-link">About Us</a>
+          </li>
+          <li>
+            <a href="#" class="navbar-link">Tours</a>
+          </li>
+          <li>
+            <a href="#" class="navbar-link">Destinations</a>
+          </li>
+          <li>
+            <a href="#" class="navbar-link">Blog</a>
+          </li>
+          <li>
+            <a href="contact.html" class="navbar-link">Contact Us</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MY ACCOUNT SECTION -->
+  <section class="section my-account">
+    <div class="container">
+      <h2 class="h2 section-title">My Account</h2>
+      
+      <div class="account-content">
+        <div class="account-sidebar">
+          <div class="user-info">
+            <div class="user-avatar">
+              <ion-icon name="person-circle-outline"></ion-icon>
+            </div>
+            <h3 class="user-name">John Doe</h3>
+            <p class="user-email">john.doe@example.com</p>
+          </div>
+          
+          <ul class="account-menu">
+            <li class="active">
+              <a href="#profile">
+                <ion-icon name="person-outline"></ion-icon>
+                Profile
+              </a>
+            </li>
+            <li>
+              <a href="#bookings">
+                <ion-icon name="calendar-outline"></ion-icon>
+                My Bookings
+              </a>
+            </li>
+            <li>
+              <a href="#wishlist">
+                <ion-icon name="heart-outline"></ion-icon>
+                Wishlist
+              </a>
+            </li>
+            <li>
+              <a href="#settings">
+                <ion-icon name="settings-outline"></ion-icon>
+                Settings
+              </a>
+            </li>
+            <li>
+              <a href="#" id="logoutBtn">
+                <ion-icon name="log-out-outline"></ion-icon>
+                Logout
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="account-details">
+          <div class="profile-section" id="profile">
+            <h3 class="section-subtitle">Profile Information</h3>
+            <div class="profile-info" id="profileInfo">
+              <div class="info-group">
+                <label>Full Name</label>
+                <p id="profileName">John Doe</p>
+              </div>
+              <div class="info-group">
+                <label>Email</label>
+                <p id="profileEmail">john.doe@example.com</p>
+              </div>
+              <div class="info-group">
+                <label>Phone</label>
+                <p id="profilePhone">+1 234 567 890</p>
+              </div>
+              <div class="info-group">
+                <label>Member Since</label>
+                <p id="profileMemberSince">May 2025</p>
+              </div>
+              <button class="btn btn-primary" id="editProfileBtn" style="margin-top:20px; width:max-content;">Edit Profile</button>
+            </div>
+            <div class="profile-edit-form" id="profileEditForm" style="display:none; margin-top:20px;">
+              <form>
+                <div class="form-group">
+                  <label for="editProfileName">Full Name</label>
+                  <input type="text" id="editProfileName" value="John Doe">
+                </div>
+                <div class="form-group">
+                  <label for="editProfileEmail">Email</label>
+                  <input type="email" id="editProfileEmail" value="john.doe@example.com">
+                </div>
+                <div class="form-group">
+                  <label for="editProfilePhone">Phone</label>
+                  <input type="tel" id="editProfilePhone" value="+1 234 567 890">
+                </div>
+                <div style="display:flex; gap:10px;">
+                  <button type="button" class="btn btn-primary" id="saveProfileBtn">Save</button>
+                  <button type="button" class="btn btn-outline" id="cancelProfileBtn">Cancel</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="bookings-section" id="bookings" style="display: none;">
+            <h3 class="section-subtitle">My Bookings</h3>
+            <div class="booking-list">
+              <div class="booking-card">
+                <div class="booking-info">
+                  <h4>Maldives Tour Package</h4>
+                  <p class="booking-date">March 15, 2024 - March 22, 2024</p>
+                  <p class="booking-status">Confirmed</p>
+                </div>
+                <div class="booking-actions">
+                  <button class="btn btn-primary">View Details</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="wishlist-section" id="wishlist" style="display: none;">
+            <h3 class="section-subtitle">My Wishlist</h3>
+            <div class="wishlist-grid">
+              <div class="wishlist-card">
+                <img src="./assets/images/destination-1.jpg" alt="Maldives">
+                <div class="wishlist-info">
+                  <h4>Maldives</h4>
+                  <p>Starting from $999</p>
+                  <button class="btn btn-primary book-now-btn" data-destination="Maldives">Book Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="settings-section" id="settings" style="display: none;">
+            <h3 class="section-subtitle">Account Settings</h3>
+            <form class="settings-form">
+              <div class="form-group">
+                <label for="update-name">Full Name</label>
+                <input type="text" id="update-name" value="John Doe">
+              </div>
+              <div class="form-group">
+                <label for="update-email">Email</label>
+                <input type="email" id="update-email" value="john.doe@example.com">
+              </div>
+              <div class="form-group">
+                <label for="update-phone">Phone</label>
+                <input type="tel" id="update-phone" value="+1 234 567 890">
+              </div>
+              <button type="submit" class="btn btn-primary">Update Profile</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- custom js link -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- ionicon link -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      const user = JSON.parse(localStorage.getItem('user'));
+      if (user) {
+        document.getElementById('profileName').textContent = user.name;
+        document.getElementById('profileEmail').textContent = user.email;
+        if (user.phone) {
+          document.getElementById('profilePhone').textContent = user.phone;
+        }
+      }
+    });
+  </script>
+
+</body>
+</html> 
